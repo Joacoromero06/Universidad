@@ -2,6 +2,8 @@ package TADs;
 
 import Recursos.IOperaciones;
 
+import Recursos.ParOrdenado;
+
 public class Numero implements IOperaciones {
     private int valor;
     
@@ -35,7 +37,8 @@ public class Numero implements IOperaciones {
     public String toString(){
         return "Numero: "+this.valor;
     }
-    //METODOS UNICOS PARA NUMERO
+    //METODOS UNICOS PARA NUMERO RECURSIVOS DESTRUYEN LOS VALORES
+    /*
     public static int MCD(Numero a, Numero b){
         if(b.GetValor()==0)
             return a.GetValor();
@@ -89,5 +92,115 @@ public class Numero implements IOperaciones {
             if(b.GetValor()<0)
                 c*=-1;
         return c;
+    } */
+    //NO ES BUENA PRACTICA USAR RECURSIVIDAD CON OBJETOS
+    public void CocienteNaturales(Numero a, Numero b){        
+        Numero cpyA=new Numero(a.GetValor());
+        Numero cpyB=new Numero(b.GetValor());
+        Numero coc=new Numero();
+        if(b.GetValor()!=0){
+            while (cpyA.GetValor()>=cpyB.GetValor()) {
+                cpyA.SetValor(cpyA.GetValor()-cpyB.GetValor());
+                coc.SetValor(coc.GetValor()+1);
+            }
+        }
+        this.valor =coc.GetValor();
+    }
+
+
+    public void RestoNaturales(Numero a, Numero b){
+        Numero cpyA=new Numero(a.GetValor());
+        Numero cpyB=new Numero(b.GetValor());
+        if(b.GetValor()!=0){
+            while (cpyA.GetValor()>=cpyB.GetValor()) 
+                cpyA.SetValor(cpyA.GetValor()-cpyB.GetValor());   
+        }
+        this.valor =cpyA.GetValor();  
+    }
+
+
+    public static ParOrdenado CRNaturales(Numero a, Numero b){
+        Numero cocN=new Numero(a.GetValor());
+        Numero resN=new Numero(b.GetValor());
+
+        cocN.CocienteNaturales(a, b);
+        resN.RestoNaturales(a,b);
+
+        return new ParOrdenado(cocN, resN);
+    }
+
+
+    public  static ParOrdenado CyR(Numero a, Numero b){
+        Numero cpyA=new Numero(Math.abs(a.GetValor()));
+        Numero cpyB=new Numero(Math.abs(b.GetValor()));
+        ParOrdenado crN=CRNaturales( cpyA , cpyB );
+        
+        Numero aux1=new Numero();
+        Numero uno=new Numero(1);
+        Numero muno=new Numero(-1);
+
+        if(a.GetValor()<0){
+            if(crN.getY().GetValor()!=0){
+
+                aux1.Resta( cpyB , crN.getY() );
+                crN.setY(aux1);
+
+                if(b.GetValor()<0){
+                    aux1 =new Numero();
+                    aux1.Sumar( crN.getX() , uno );
+                    crN.setX(aux1);
+                }
+                else{
+                    aux1 =new Numero();
+                    aux1.Resta( muno , crN.getX() );
+                    crN.setX(aux1);
+                }
+            }
+            else{
+                if(b.GetValor()>0){
+                    aux1.Producto(crN.getX(), muno);
+                    crN.setX(aux1);
+                }
+            }
+        }
+        else{
+            if(b.GetValor()<0){
+                aux1.Producto( crN.getX() , muno );
+                crN.setX(aux1);
+            }  
+        }
+        return crN;
+    }
+    
+    
+    public void MCD(Numero a, Numero b){
+        
+        ParOrdenado cr;
+        
+        Numero cpyA=new Numero(Math.abs(a.GetValor()));
+        Numero cpyB=new Numero(Math.abs(b.GetValor()));
+        
+        while (cpyB.GetValor()!=0) {
+            cr=CyR( cpyA , cpyB );
+            cpyA=new Numero(cpyB.GetValor());
+            cpyB.SetValor(cr.getY().GetValor());
+        }
+        this.valor=cpyA.GetValor();
+    } 
+
+
+    public void MCM(Numero a, Numero b){
+        
+        Numero mcd=new Numero(); 
+        mcd.MCD(a, b);
+
+        Numero prod=new Numero();
+        prod.Producto(a, b);
+        if(prod.GetValor()<0){
+            prod.SetValor(prod.GetValor()*-1);
+        }
+
+        ParOrdenado cr=CyR(prod, mcd);
+        this.valor=cr.getX().GetValor();
     }
 }
