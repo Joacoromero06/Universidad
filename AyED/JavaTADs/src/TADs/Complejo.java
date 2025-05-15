@@ -1,0 +1,88 @@
+package TADs;
+
+import Recursos.IOperaciones;
+
+public class Complejo implements IOperaciones{
+    double real,imaginaria;
+
+    //CONSTRUCTORES SETTERS Y GETTERS
+
+
+    public Complejo(){
+        this(0,0);
+    }
+    public Complejo(double real, double imaginaria) {
+        this.real = real;
+        this.imaginaria = imaginaria;
+    }
+    public double getReal() {
+        return real;
+    }
+    public void setReal(double real) {
+        this.real = real;
+    }
+    public double getImaginaria() {
+        return imaginaria;
+    }
+    public void setImaginaria(double imaginaria) {
+        this.imaginaria = imaginaria;
+    }
+
+    
+    //METODOS DE IOPERACIONES GENERALES PARA CUALQUIER OBJETO MATEMATICO
+    public void Sumar(Object a, Object b) {
+        this.real=((Complejo)a).getReal()+((Complejo)b).getReal();
+        this.imaginaria=((Complejo)a).getImaginaria()+((Complejo)b).getImaginaria();
+    }
+
+   
+    public void Resta(Object a, Object b) {
+        this.real=((Complejo)a).getReal()-((Complejo)b).getReal();
+        this.imaginaria=((Complejo)a).getImaginaria()-((Complejo)b).getImaginaria();
+    }
+
+    
+    public void Producto(Object a, Object b) {
+        this.real=((Complejo)a).getReal()*((Complejo)b).getReal();
+        this.imaginaria=((Complejo)a).getImaginaria()*((Complejo)b).getImaginaria();
+    }
+
+   
+    public void Potencia(Object a, int n) {
+        this.real=Math.pow(((Complejo)a).getReal(),n);
+        this.imaginaria=Math.pow(((Complejo)a).getImaginaria(),n);
+    }
+
+    
+    public boolean Iguales(Object a, Object b) {
+        return ((Complejo)a).getReal()==((Complejo)b).getReal() &&((Complejo)a).getImaginaria()==((Complejo)b).getImaginaria();
+    }
+
+
+    //METODOS UNICOS DE LA CLASE COMPLEJO
+    public String toString(){
+        return "Numero Complejo: "+this.real+" "+this.imaginaria+"i ";
+    }
+
+
+    public void Division(Complejo a, Complejo b){
+        Complejo aux=new Complejo();
+        if(!Iguales(aux, b)){
+            this.real=a.getReal()/b.getReal();
+            this.imaginaria=a.getImaginaria()/b.getImaginaria();
+        }
+        else
+            System.err.println("Division por 0+0i no definida");
+    }
+
+    
+    public void Conjugado(Complejo a){
+        this.real=a.getReal();
+        this.imaginaria=a.getImaginaria()*-1;
+    }
+
+
+    public static double Modulo(Complejo a){
+        return Math.sqrt(a.getReal()*a.getReal()+a.getImaginaria()*a.getImaginaria());
+    }
+}

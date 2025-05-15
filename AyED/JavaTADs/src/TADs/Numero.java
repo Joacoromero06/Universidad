@@ -6,7 +6,10 @@ import Recursos.ParOrdenado;
 
 public class Numero implements IOperaciones {
     private int valor;
-    
+
+    ////CONSTRUCTORES SETTERS Y GETTERS
+
+
     public Numero(){
         this.valor=0;
     }
@@ -19,25 +22,33 @@ public class Numero implements IOperaciones {
     public void SetValor(int valor){
         this.valor=valor;
     }
+    
+    
+    //METODOS DE IOPERACIONES GENERALES PARA CUALQUIER OBJETO MATEMATICO
     public void Sumar(Object a, Object b) {
         this.valor=((Numero)a).GetValor()+((Numero)b).GetValor();
     }
+    
+    
     public void Resta(Object a, Object b) {
         this.valor=((Numero)a).GetValor()-((Numero)b).GetValor();
     }
+    
+    
     public void Producto(Object a, Object b) {
         this.valor=((Numero)a).GetValor()*((Numero)b).GetValor();
     }
+    
+    
     public void Potencia(Object a, int n) {
         this.valor=(int)Math.pow((double)((Numero)a).GetValor(),(double)n);
     }
+    
+    
     public boolean Iguales(Object a, Object b) {
         return ((Numero)a).GetValor()==((Numero)b).GetValor();
-    }
-    public String toString(){
-        return "Numero: "+this.valor;
-    }
-    //METODOS UNICOS PARA NUMERO RECURSIVOS DESTRUYEN LOS VALORES
+    }  
+    //METODOS RECURSIVOS DESTRUYEN LOS VALORES
     /*
     public static int MCD(Numero a, Numero b){
         if(b.GetValor()==0)
@@ -94,6 +105,14 @@ public class Numero implements IOperaciones {
         return c;
     } */
     //NO ES BUENA PRACTICA USAR RECURSIVIDAD CON OBJETOS
+    
+
+    //METODOS UNICOS DE LA CLASE NUMERO
+    public String toString(){
+        return "Numero: "+this.valor;
+    }
+    
+    
     public void CocienteNaturales(Numero a, Numero b){        
         Numero cpyA=new Numero(a.GetValor());
         Numero cpyB=new Numero(b.GetValor());

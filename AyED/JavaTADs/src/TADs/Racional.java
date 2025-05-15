@@ -1,33 +1,34 @@
 package TADs;
 
 import Recursos.IOperaciones;
+
 import Recursos.ParOrdenado;
 
 public class Racional implements IOperaciones {
     private Numero num,den;
 
+    //CONSTRUCTORES SETTERS Y GETTERS
+
+
     public Racional(Numero num, Numero den) {
         this.num = num;
         this.den = den;
     }
-
     public Numero getNum() {
         return num;
     }
-
     public void setNum(Numero num) {
         this.num = num;
     }
-
     public Numero getDen() {
         return den;
     }
-
     public void setDen(Numero den) {
         this.den = den;
     }
 
 
+    //METODOS DE IOPERACIONES GENERALES PARA CUALQUIER OBJETO MATEMATICO
     public void Sumar(Object a, Object b) {
         
         Numero aux1=new Numero();
@@ -101,6 +102,7 @@ public class Racional implements IOperaciones {
     }
 
 
+    //METODOS UNICOS DE LA CLASE RACIONAL
     public String toString(){
         return this.num +" / "+this.den;
     }
