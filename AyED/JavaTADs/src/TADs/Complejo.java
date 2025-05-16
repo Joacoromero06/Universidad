@@ -1,8 +1,8 @@
 package TADs;
 
-import Recursos.IOperaciones;
+import Recursos.Operable;
 
-public class Complejo implements IOperaciones{
+public class Complejo extends Operable{
     double real,imaginaria;
 
     //CONSTRUCTORES SETTERS Y GETTERS
@@ -30,31 +30,31 @@ public class Complejo implements IOperaciones{
 
     
     //METODOS DE IOPERACIONES GENERALES PARA CUALQUIER OBJETO MATEMATICO
-    public void Sumar(Object a, Object b) {
+    public void Sumar(Operable a, Operable b) {
         this.real=((Complejo)a).getReal()+((Complejo)b).getReal();
         this.imaginaria=((Complejo)a).getImaginaria()+((Complejo)b).getImaginaria();
     }
 
    
-    public void Resta(Object a, Object b) {
+    public void Resta(Operable a, Operable b) {
         this.real=((Complejo)a).getReal()-((Complejo)b).getReal();
         this.imaginaria=((Complejo)a).getImaginaria()-((Complejo)b).getImaginaria();
     }
 
     
-    public void Producto(Object a, Object b) {
+    public void Producto(Operable a, Operable b) {
         this.real=((Complejo)a).getReal()*((Complejo)b).getReal();
         this.imaginaria=((Complejo)a).getImaginaria()*((Complejo)b).getImaginaria();
     }
 
    
-    public void Potencia(Object a, int n) {
+    public void Potencia(Operable a, int n) {
         this.real=Math.pow(((Complejo)a).getReal(),n);
         this.imaginaria=Math.pow(((Complejo)a).getImaginaria(),n);
     }
 
     
-    public boolean Iguales(Object a, Object b) {
+    public boolean Iguales(Operable a, Operable b) {
         return ((Complejo)a).getReal()==((Complejo)b).getReal() &&((Complejo)a).getImaginaria()==((Complejo)b).getImaginaria();
     }
 

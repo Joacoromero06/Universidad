@@ -1,10 +1,10 @@
 package TADs;
 
-import Recursos.IOperaciones;
+import Recursos.Operable;
 
 import Recursos.ParOrdenado;
 
-public class Racional implements IOperaciones {
+public class Racional extends Operable {
     private Numero num,den;
 
     //CONSTRUCTORES SETTERS Y GETTERS
@@ -29,7 +29,7 @@ public class Racional implements IOperaciones {
 
 
     //METODOS DE IOPERACIONES GENERALES PARA CUALQUIER OBJETO MATEMATICO
-    public void Sumar(Object a, Object b) {
+    public void Sumar(Operable a, Operable b) {
         
         Numero aux1=new Numero();
         aux1.Producto( ((Racional)a).getNum()  ,  ((Racional)b).getDen() );
@@ -48,7 +48,7 @@ public class Racional implements IOperaciones {
     }
 
 
-    public void Resta(Object a, Object b) {
+    public void Resta(Operable a, Operable b) {
 
         Numero aux1=new Numero();
         aux1.Producto( ((Racional)a).getNum()  ,  ((Racional)b).getDen() );
@@ -67,7 +67,7 @@ public class Racional implements IOperaciones {
     }
 
   
-    public void Producto(Object a, Object b) {
+    public void Producto(Operable a, Operable b) {
         
         Numero num=new Numero();
         num.Producto( ((Racional)a).getNum()  ,  ((Racional)b).getNum() );
@@ -80,7 +80,7 @@ public class Racional implements IOperaciones {
     }
 
 
-    public void Potencia(Object a, int n) {
+    public void Potencia(Operable a, int n) {
 
         Numero num=new Numero();
         num.Potencia( ((Racional)a).getNum()  ,  n );
@@ -93,7 +93,7 @@ public class Racional implements IOperaciones {
     }
 
     
-    public boolean Iguales(Object a, Object b) {
+    public boolean Iguales(Operable a, Operable b) {
         
         ((Racional)a).Simplificacion();
         ((Racional)b).Simplificacion();
