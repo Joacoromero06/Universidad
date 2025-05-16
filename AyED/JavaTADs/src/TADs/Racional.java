@@ -8,8 +8,10 @@ public class Racional implements IOperaciones {
     private Numero num,den;
 
     //CONSTRUCTORES SETTERS Y GETTERS
-
-
+    public Racional(){
+        this.den=new Numero(1);
+        this.num=new Numero(0);
+    }
     public Racional(Numero num, Numero den) {
         this.num = num;
         this.den = den;

@@ -3,7 +3,7 @@ package TADs;
 import Recursos.IOperaciones;
 
 public class Complejo implements IOperaciones{
-    double real,imaginaria;
+    protected double real,imaginaria;
 
     //CONSTRUCTORES SETTERS Y GETTERS
 
@@ -64,6 +64,12 @@ public class Complejo implements IOperaciones{
         return "Numero Complejo: "+this.real+" "+this.imaginaria+"i ";
     }
 
+    
+    public void Conjugado(Complejo a){
+        this.real=a.getReal();
+        this.imaginaria=a.getImaginaria()*-1;
+    }
+
 
     public void Division(Complejo a, Complejo b){
         Complejo aux=new Complejo();
@@ -73,12 +79,6 @@ public class Complejo implements IOperaciones{
         }
         else
             System.err.println("Division por 0+0i no definida");
-    }
-
-    
-    public void Conjugado(Complejo a){
-        this.real=a.getReal();
-        this.imaginaria=a.getImaginaria()*-1;
     }
 
 
