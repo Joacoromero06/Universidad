@@ -1,28 +1,25 @@
 package testing;
+
 import contenedores.*;
 
-
-import java.util.Scanner;
+import recursos.Entrada;
 
 public class TestSLL {
 	public static void main(String[] args) {
 		
 		//TEST PILA SLINKEDLIST
 		Object objAux;
-		Scanner sc1, sc2;
-		int n, elemento; 
+		int n = Entrada.sc.nextInt();
+
 		System.out.println("Ingrese cantidad");
-		sc1 = new Scanner(System.in);
-		n = sc1.nextInt();
+		
+		
 		if (n > 0) {
 			PilaSLinkedList objPila = new PilaSLinkedList();//inbstancia 
 			
 			for (int i=0; i<n; i++) {//Carga
 				System.out.println("Ingrese elemento");
-				sc2 = new Scanner(System.in);
-				elemento=sc2.nextInt();
-				
-				objPila.meter(elemento);				
+				objPila.meter(Entrada.sc.nextInt());				
 			}
 			
 			while (!objPila.estaVacia()) {//Muestra

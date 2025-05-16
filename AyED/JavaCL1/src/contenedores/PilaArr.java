@@ -2,9 +2,9 @@ package contenedores;
 import recursos.*;
 
 public class PilaArr implements OperacionesCL1, OperacionesCL1Estaticos {
-	private Object[] pila;//Array de objetos llamado pila
-	private int cabeza;//Manejamos un indice cabeza para no hacer corrimiento
-	private int tamPila;//Necesitamos el tamaño del array para declararlo, no de elementos sino del array
+	protected Object[] pila;//Array de objetos llamado pila
+	protected int cabeza;//Manejamos un indice cabeza para no hacer corrimiento
+	protected int tamPila;//Necesitamos el tamaño del array para declararlo, no de elementos sino del array
 	
 
 	//Constructor de PilaArr
@@ -28,7 +28,7 @@ public class PilaArr implements OperacionesCL1, OperacionesCL1Estaticos {
 	}
 	
 
-	public Object sacar() {
+	public Object sacar() {//CONSULTA 
 		Object elemento = null;//el objeto que vamos a retornar
 		if (!estaVacia()){
 			elemento = this.pila[this.cabeza];//Sacamos el primero en la pila(ultimo en el array)//SIGUE AHI ES BASURA

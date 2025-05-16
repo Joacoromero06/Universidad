@@ -1,6 +1,6 @@
 package aplicaciones;
-import contenedores.PilaArr;//Solo necesito la clase PilaArr
 
+import contenedores.PilaArr;//Solo necesito la clase PilaArr
 
 public class miPilaArr extends PilaArr{
     //Sin atributos, mi pila no tiene nuevos atributos
@@ -11,8 +11,8 @@ public class miPilaArr extends PilaArr{
         super(tamPila);//Llamo al constructor de la super clase con su respectivo atributro q necesita
     }
     public Object topePila(){
-        Object elemento = this.sacar();
-        this.meter(elemento);
+        Object elemento = new Object();
+        elemento=this.pila[this.cabeza];
         return elemento;
     }
 }

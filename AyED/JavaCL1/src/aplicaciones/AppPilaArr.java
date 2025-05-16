@@ -1,6 +1,6 @@
 package aplicaciones;
-import contenedores.PilaArr;//Solo necesito la clase PilaArr
 
+import contenedores.PilaArr;//Solo necesito la clase PilaArr
 
 public class AppPilaArr {
     //Sin atributos clase que usa PilaArr

@@ -1,32 +1,29 @@
 package testing;
+
 import contenedores.*;
 
-import java.util.Scanner;
+import recursos.Entrada;
 
 public class TestArr {
 	public static void main(String[] args) {
 		
 		//TEST PILA_ARR
-		Object objAux;
-		Scanner sc1, sc2;
-		int n, elemento; 	
+		int n; 	
 		System.out.println("Ingrese cantidad");
-		sc1 = new Scanner(System.in);
-		n = sc1.nextInt();
+		n = Entrada.sc.nextInt();
 		if (n > 0) {
 			PilaArr objPila = new PilaArr(n);
 			
 			for (int i=0; i<n; i++) {//Carga
 				System.out.println("Ingrese elemento");
-				sc2 = new Scanner(System.in);
-				objPila.meter(sc2.nextInt());				
+				objPila.meter(Entrada.sc.nextInt());				
 			}
 			
 			while (!objPila.estaVacia()) {//Muesta	
 				System.out.println("Elemento Pila " + objPila.sacar());		
 			}
 			
-			objAux = objPila.sacar();//Ya sacamos todo no va a dejar sacar, en objaux quedo null
+			objPila.sacar();//Ya sacamos todo no va a dejar sacar, en objaux quedo null
 		}
 		
 		//TEST COLA ARR
