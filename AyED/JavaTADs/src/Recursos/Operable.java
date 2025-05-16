@@ -2,13 +2,17 @@ package Recursos;
 
 public abstract class Operable {
 
-    public void Sumar(Operable a, Operable b);
+    public abstract void Sumar(Operable a, Operable b);
 
-    public void Resta(Operable a, Operable b);
+    public abstract void Resta(Operable a, Operable b);
 
-    public void Producto(Operable a, Operable b);
+    public abstract void Producto(Operable a, Operable b);
 
-    public void Potencia(Operable a, int n);
+    public abstract void Potencia(Operable a, int n);
 
-    public boolean Iguales(Operable a, Operable b);
+    public abstract boolean Iguales(Operable a, Operable b);
+
+    public abstract Operable Carga();
+
+    public abstract Operable Inicializa();
 }

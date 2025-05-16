@@ -1,5 +1,7 @@
 package TADs;
 
+import Recursos.Entrada;
+
 import Recursos.Operable;
 
 public class Complejo extends Operable{
@@ -29,7 +31,7 @@ public class Complejo extends Operable{
     }
 
     
-    //METODOS DE IOPERACIONES GENERALES PARA CUALQUIER OBJETO MATEMATICO
+    //METODOS DE OPERABLE GENERALES PARA CUALQUIER OBJETO MATEMATICO
     public void Sumar(Operable a, Operable b) {
         this.real=((Complejo)a).getReal()+((Complejo)b).getReal();
         this.imaginaria=((Complejo)a).getImaginaria()+((Complejo)b).getImaginaria();
@@ -59,6 +61,24 @@ public class Complejo extends Operable{
     }
 
 
+    public Operable Carga(){
+        System.out.println("Carga Complejo");
+
+        System.out.println("Ingrese la parte real: ");
+        double real=Entrada.sc.nextDouble();
+        
+        System.out.println("Ingrese la parte real: ");
+        double imaginaria=Entrada.sc.nextDouble();
+
+        return new Complejo(real,imaginaria);
+    }
+    
+    
+    public Operable Inicializa(){
+        return new Complejo(); 
+    }
+    
+    
     //METODOS UNICOS DE LA CLASE COMPLEJO
     public String toString(){
         return "Numero Complejo: "+this.real+" "+this.imaginaria+"i ";

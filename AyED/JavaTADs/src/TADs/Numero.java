@@ -1,5 +1,6 @@
 package TADs;
 
+import Recursos.Entrada;
 import Recursos.Operable;
 
 import Recursos.ParOrdenado;
@@ -48,6 +49,20 @@ public class Numero extends Operable {
     public boolean Iguales(Operable a, Operable b) {
         return ((Numero)a).GetValor()==((Numero)b).GetValor();
     }  
+    
+    
+    public Operable Carga(){
+        System.out.println("Carga Entero: ");
+
+        return new Numero(Entrada.sc.nextInt());
+    }
+    
+    
+    public Operable Inicializa(){
+        return new Numero();
+    }
+
+    
     //METODOS RECURSIVOS DESTRUYEN LOS VALORES
     /*
     public static int MCD(Numero a, Numero b){
