@@ -68,4 +68,31 @@ public class PilaInt {
             this.pila.meter((int)aux.pila.sacar()); 
         }
     }
+
+
+    public static boolean Verifica(String str){
+        int i=0;
+        boolean b=true;
+        PilaInt aux=new PilaInt();
+
+        while (i<str.length() && b) {
+
+            if(str.charAt(i)=='(')
+                aux.pila.meter(0);  
+
+            if( str.charAt(i)==')' ){
+                if(aux.pila.estaVacia())
+                    b=false;
+                else
+                    aux.pila.sacar();
+            }
+            i++;
+        }
+
+        if(b==true&&!aux.pila.estaVacia())
+            b=false;
+
+        System.out.println("Vamos a verificar si la cadena: "+str+" esta balanceada: ");
+        return b;
+    }
 }

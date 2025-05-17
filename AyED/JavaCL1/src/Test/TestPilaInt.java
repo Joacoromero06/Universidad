@@ -9,5 +9,6 @@ public class TestPilaInt {
         System.out.println(pila);
         pila.Reemplaza(2, 4);
         System.out.println(pila);
+        System.out.println(PilaInt.Verifica("(a(s(s)))()(sad))" ));
     }
 }
