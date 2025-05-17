@@ -6,7 +6,7 @@ import contenedores.PilaSLinkedList;
 import recursos.OperacionesCL1;
 
 public class ColaUtil {
-    private OperacionesCL1 cola;
+    protected OperacionesCL1 cola;
 
 
     public ColaUtil(){
@@ -45,6 +45,8 @@ public class ColaUtil {
     public void Invertir(){
         PilaSLinkedList aux=new PilaSLinkedList();
         
+        System.out.println("Invirtiendo la Cola: ");
+        
         while (!this.cola.estaVacia()) {
             aux.meter(this.cola.sacar());
         }
@@ -55,13 +57,22 @@ public class ColaUtil {
     }
 
 
-    public void Concatenar(OperacionesCL1 nvo){
-        Object aux;
-        while (!nvo.estaVacia()) {
-            aux=new Object();
-            aux=nvo.sacar();
-            this.cola.meter(aux);
-            nvo.meter(aux);
+    public void Concatenar(ColaUtil nvo){
+        Object elem;
+        ColaUtil aux= new ColaUtil();
+        System.out.println("Concatenando la Cola: ");
+        
+        while (!nvo.GetCola().estaVacia()) {
+            elem=new Object();
+            elem=nvo.GetCola().sacar();
+            this.cola.meter(elem);
+            aux.GetCola().meter(elem);
+        }
+        while (!aux.GetCola().estaVacia()) {
+            nvo.GetCola().meter(aux.GetCola().sacar());
         }
     }
+
+
+
 }
