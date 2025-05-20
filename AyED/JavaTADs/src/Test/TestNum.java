@@ -6,10 +6,9 @@ import TADs.Numero;
 public class TestNum {
     public static void main(String[] args) {
         Numero n1=new Numero(-15);Numero n2=new Numero(5);
-        
+
         ParOrdenado cr= Numero.CyR(n1,n2);
         System.out.println("Cociente y resto entre  "+n1+" con "+n2+" es "+ cr);
-
 
         Numero n3=new Numero();
         n3.MCD(n1,n2);
