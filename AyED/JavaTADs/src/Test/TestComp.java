@@ -1,5 +1,6 @@
 package Test; 
 
+import TADS_Adittion.AddComp;
 import TADs.Complejo;
 
 public class TestComp {
@@ -8,8 +9,9 @@ public class TestComp {
         Complejo n1=new Complejo(1,1);
         System.out.println(n1);
         
-        Complejo n2=new Complejo();
-        n2.Division(n1, new Complejo());
+        //Uso AddComp
+        AddComp n2=new AddComp();
+        n2.Division((Object)n1,(Object)new Complejo());
         
         System.out.println(Complejo.Modulo(n1));
         

@@ -5,6 +5,9 @@ import Recursos.IOpeAvanzadas;
 import TADs.Complejo;
 
 public class AddComp extends Complejo implements IOpeAvanzadas{
+    public AddComp(){
+        super();
+    }
     public void Division(Object a,Object b){//No es uso del Tad entre a los atributos
         Complejo aux=new Complejo();
         if(!Iguales(aux, b)){

@@ -1,5 +1,6 @@
 package Test;
 
+import TADS_Adittion.AddRac;
 import TADs.Numero;
 import TADs.Racional;
 
@@ -18,5 +19,9 @@ public class TestRac {
 
         fraccaux=new Racional(new Numero(),new Numero());
         fraccaux.Potencia(fracc2, 3);System.out.println(fraccaux);
+
+        //Uso de AddRac
+        AddRac fracc4 =new AddRac();
+        fracc4.Division(fracc1, fracc2);System.out.println(fracc4);
     }
 }

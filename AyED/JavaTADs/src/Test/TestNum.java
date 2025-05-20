@@ -1,6 +1,7 @@
 package Test;
 
 import Recursos.ParOrdenado;
+import TADS_Adittion.AddNum;
 import TADs.Numero;
 
 public class TestNum {
@@ -18,5 +19,9 @@ public class TestNum {
         n3=new Numero();
         n3.MCM(n1,n2);
         System.out.println("mcm entre  "+n1+" con "+n2+" es "+n3);
+
+        //Uso de AddNum
+        AddNum n4=new AddNum();
+        n4.Division(n1, n2);System.out.println(n4);
     }
 }

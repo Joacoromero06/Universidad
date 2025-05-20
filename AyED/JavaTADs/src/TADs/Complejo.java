@@ -71,7 +71,7 @@ public class Complejo implements IOperaciones{
     }
 
 
-    public void Division(Complejo a, Complejo b){
+    /*public void Division(Complejo a, Complejo b){
         Complejo aux=new Complejo();
         if(!Iguales(aux, b)){
             this.real=a.getReal()/b.getReal();
@@ -79,7 +79,7 @@ public class Complejo implements IOperaciones{
         }
         else
             System.err.println("Division por 0+0i no definida");
-    }
+    }*/
 
 
     public static double Modulo(Complejo a){
