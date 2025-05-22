@@ -23,7 +23,7 @@ public class PilaSLinkedList implements OperacionesCL1 {
 	public void meter(Object elemento) {
 		this.pila = new Nodo(elemento, this.pila);
 	} 
-
+//PilaSlinkedList mipila = new() PilaSlinkedList()
 
 	//SLinkedList esta vacia solo si el primer nodo es NULL (notiene ninguna info)
 	public boolean estaVacia() {
