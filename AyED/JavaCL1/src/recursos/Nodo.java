@@ -1,10 +1,8 @@
 package recursos;
 //Objeto clase nodo usado par implementar SLinkedList
-public class Nodo extends Object {
-	//Es generica permite guardar cualquier cosa al ser de tipo object
-	private Object nodoInfo;
-	//Este atributo permite que un nodo contenga Literalmente otro nodo, estructura recursiva
-	private Nodo nextNodo;
+public class Nodo {
+	private Object nodoInfo;//Es generica permite guardar cualquier cosa al ser de tipo object
+	private Nodo nextNodo;//Este atributo permite que un nodo contenga Literalmente otro nodo, estructura recursiva
 	
 
 	//Constructor por eso se llama del mismo nombre que la clase
