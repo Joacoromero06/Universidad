@@ -5,7 +5,7 @@ import Recursos.Operable;
 
 import Recursos.ParOrdenado;
 
-public class Numero extends Operable {
+public class Numero implements Operable {
     private int valor;
 
     ////CONSTRUCTORES SETTERS Y GETTERS

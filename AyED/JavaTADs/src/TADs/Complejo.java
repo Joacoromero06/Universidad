@@ -4,7 +4,7 @@ import Recursos.Entrada;
 
 import Recursos.Operable;
 
-public class Complejo extends Operable{
+public class Complejo implements Operable{
     double real,imaginaria;
 
     //CONSTRUCTORES SETTERS Y GETTERS

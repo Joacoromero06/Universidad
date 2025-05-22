@@ -4,7 +4,7 @@ import Recursos.Entrada;
 
 import Recursos.Operable;;
 
-public class Matriz extends Operable{
+public class Matriz implements Operable{
     Operable matriz[][];
     int n,m;
 

@@ -4,7 +4,7 @@ import Recursos.Operable;
 
 import Recursos.ParOrdenado;
 
-public class Racional extends Operable {
+public class Racional implements Operable {
     private Numero num,den;
 
     //CONSTRUCTORES SETTERS Y GETTERS
