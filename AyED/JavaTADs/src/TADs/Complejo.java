@@ -37,7 +37,7 @@ public class Complejo implements Operable{
         this.imaginaria=((Complejo)a).getImaginaria()+((Complejo)b).getImaginaria();
     }
 
-   
+    
     public void Resta(Operable a, Operable b) {
         this.real=((Complejo)a).getReal()-((Complejo)b).getReal();
         this.imaginaria=((Complejo)a).getImaginaria()-((Complejo)b).getImaginaria();
