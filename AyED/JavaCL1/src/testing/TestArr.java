@@ -11,8 +11,7 @@ public class TestArr {
 		Scanner sc1, sc2;
 		int n, elemento; 	
 		System.out.println("Ingrese cantidad");
-		sc1 = new Scanner(System.in);
-		n = sc1.nextInt();
+		n = Entrada.sc.nextInt();
 		if (n > 0) {
 			PilaArr objPila = new PilaArr(n);
 			
