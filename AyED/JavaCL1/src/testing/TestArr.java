@@ -1,5 +1,4 @@
 package testing;
-
 import contenedores.*;
 
 import recursos.Entrada;
@@ -8,12 +7,11 @@ public class TestArr {
 	public static void main(String[] args) {
 		
 		//TEST PILA_ARR
-		int n; 	
+		int n;	
 		System.out.println("Ingrese cantidad");
 		n = Entrada.sc.nextInt();
 		if (n > 0) {
 			PilaArr objPila = new PilaArr(n);
-			
 			for (int i=0; i<n; i++) {//Carga
 				System.out.println("Ingrese elemento");
 				objPila.meter(Entrada.sc.nextInt());				
@@ -22,7 +20,6 @@ public class TestArr {
 			while (!objPila.estaVacia()) {//Muesta	
 				System.out.println("Elemento Pila " + objPila.sacar());		
 			}
-			
 			objPila.sacar();//Ya sacamos todo no va a dejar sacar, en objaux quedo null
 		}
 		
