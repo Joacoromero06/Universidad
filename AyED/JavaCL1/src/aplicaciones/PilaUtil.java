@@ -2,10 +2,10 @@ package aplicaciones;
 
 import contenedores.PilaArr;
 import contenedores.PilaSLinkedList;
-import recursos.OperacionesCL1;
+import recursos.ContLin1;
 
 public class PilaUtil {
-    protected OperacionesCL1 pila;
+    protected ContLin1 pila;
 
 
     public PilaUtil(){

@@ -3,10 +3,10 @@ package aplicaciones;
 import contenedores.ColaArr;
 import contenedores.ColaSLinkedList;
 import contenedores.PilaSLinkedList;
-import recursos.OperacionesCL1;
+import recursos.ContLin1;
 
 public class ColaUtil {
-    protected OperacionesCL1 cola;
+    protected ContLin1 cola;
 
 
     public ColaUtil(){
@@ -19,7 +19,7 @@ public class ColaUtil {
     }    
 
 
-    public OperacionesCL1 GetCola(){
+    public ContLin1 GetCola(){
         return this.cola;
     }
 

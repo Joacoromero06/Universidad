@@ -4,7 +4,7 @@ package contenedores;
 import recursos.*;
 
 
-public class PilaSLinkedList implements OperacionesCL1 {
+public class PilaSLinkedList implements ContLin1 {
 	//Para manejar una pila con SlinkedList solo necesitamos un nodo que es la CABEZA que apartir de ella se enlaza todo
 	private Nodo pila;
 	
@@ -23,7 +23,7 @@ public class PilaSLinkedList implements OperacionesCL1 {
 	public void meter(Object elemento) {
 		this.pila = new Nodo(elemento, this.pila);
 	} 
-//PilaSlinkedList mipila = new() PilaSlinkedList()
+
 
 	//SLinkedList esta vacia solo si el primer nodo es NULL (notiene ninguna info)
 	public boolean estaVacia() {
