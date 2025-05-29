@@ -1,16 +1,15 @@
 package TADs;
 
-import Recursos.IOperaciones;
+import Recursos.Operable;
 
 import Recursos.ParOrdenado;
 
-public class Racional implements IOperaciones {
+public class Racional implements Operable {
     private Numero num,den;
 
     //CONSTRUCTORES SETTERS Y GETTERS
     public Racional(){
-        this.den=new Numero(1);
-        this.num=new Numero(0);
+        this(new Numero(), new Numero(1));
     }
     public Racional(Numero num, Numero den) {
         this.num = num;
@@ -31,7 +30,7 @@ public class Racional implements IOperaciones {
 
 
     //METODOS DE IOPERACIONES GENERALES PARA CUALQUIER OBJETO MATEMATICO
-    public void Sumar(Object a, Object b) {
+    public void Sumar(Operable a, Operable b) {//consulta
         
         Numero aux1=new Numero();
         aux1.Producto( ((Racional)a).getNum()  ,  ((Racional)b).getDen() );
@@ -45,12 +44,15 @@ public class Racional implements IOperaciones {
         Numero den=new Numero();
         den.Producto( ((Racional)a).getDen()  ,  ((Racional)b).getDen() );
 
-        this.num=num;
-        this.den=den;
+        Racional aux=new Racional(num, den);
+        aux.Simplificacion();
+        
+        this.num=aux.getNum();
+        this.den=aux.getDen();
     }
 
 
-    public void Resta(Object a, Object b) {
+    public void Resta(Operable a, Operable b) {
 
         Numero aux1=new Numero();
         aux1.Producto( ((Racional)a).getNum()  ,  ((Racional)b).getDen() );
@@ -64,12 +66,15 @@ public class Racional implements IOperaciones {
         Numero den=new Numero();
         den.Producto( ((Racional)a).getDen()  ,  ((Racional)b).getDen() );
 
-        this.num=num;
-        this.den=den;
+        Racional aux=new Racional(num, den);
+        aux.Simplificacion();
+        
+        this.num=aux.getNum();
+        this.den=aux.getDen();
     }
 
   
-    public void Producto(Object a, Object b) {
+    public void Producto(Operable a, Operable b) {
         
         Numero num=new Numero();
         num.Producto( ((Racional)a).getNum()  ,  ((Racional)b).getNum() );
@@ -77,12 +82,15 @@ public class Racional implements IOperaciones {
         Numero den=new Numero();
         den.Producto( ((Racional)a).getDen()  ,  ((Racional)b).getDen() );
 
-        this.num=num;
-        this.den=den;
+        Racional aux=new Racional(num, den);
+        aux.Simplificacion();
+        
+        this.num=aux.getNum();
+        this.den=aux.getDen();
     }
 
 
-    public void Potencia(Object a, int n) {
+    public void Potencia(Operable a, int n) {
 
         Numero num=new Numero();
         num.Potencia( ((Racional)a).getNum()  ,  n );
@@ -90,12 +98,15 @@ public class Racional implements IOperaciones {
         Numero den=new Numero();
         den.Potencia( ((Racional)a).getDen()  ,  n );
 
-        this.num=num;
-        this.den=den;
+        Racional aux=new Racional(num, den);
+        aux.Simplificacion();
+        
+        this.num=aux.getNum();
+        this.den=aux.getDen();
     }
 
     
-    public boolean Iguales(Object a, Object b) {
+    public boolean Iguales(Operable a, Operable b) {//verificar
         
         ((Racional)a).Simplificacion();
         ((Racional)b).Simplificacion();
@@ -104,6 +115,26 @@ public class Racional implements IOperaciones {
     }
 
 
+    public Operable Carga(){//consulta
+        System.out.println("Carga Racional: ");
+
+        Numero aux=new Numero();//usado solo apra llamar a Carga ¿ineficiente?¿mal diseño?
+
+        Numero num=(Numero)aux.Carga();//aux tipo Numero llama a su carga
+        Numero den=(Numero)aux.Carga();
+
+        Racional nvo=new Racional(num,den);
+        nvo.Simplificacion();
+
+        return nvo;
+    }
+    
+    
+    public Operable Inicializa(){//¿necesario por el diseño?
+        return new Racional();
+    }
+   
+   
     //METODOS UNICOS DE LA CLASE RACIONAL
     public String toString(){
         return this.num +" / "+this.den;

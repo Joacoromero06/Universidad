@@ -1,10 +1,11 @@
 package TADs;
 
-import Recursos.IOperaciones;
+import Recursos.Entrada;
+import Recursos.Operable;
 
 import Recursos.ParOrdenado;
 
-public class Numero implements IOperaciones {
+public class Numero implements Operable {
     private int valor;
 
     ////CONSTRUCTORES SETTERS Y GETTERS
@@ -25,29 +26,43 @@ public class Numero implements IOperaciones {
     
     
     //METODOS DE IOPERACIONES GENERALES PARA CUALQUIER OBJETO MATEMATICO
-    public void Sumar(Object a, Object b) {
+    public void Sumar(Operable a, Operable b) {
         this.valor=((Numero)a).GetValor()+((Numero)b).GetValor();
     }
     
     
-    public void Resta(Object a, Object b) {
+    public void Resta(Operable a, Operable b) {
         this.valor=((Numero)a).GetValor()-((Numero)b).GetValor();
     }
     
     
-    public void Producto(Object a, Object b) {
+    public void Producto(Operable a, Operable b) {
         this.valor=((Numero)a).GetValor()*((Numero)b).GetValor();
     }
     
     
-    public void Potencia(Object a, int n) {
+    public void Potencia(Operable a, int n) {
         this.valor=(int)Math.pow((double)((Numero)a).GetValor(),(double)n);
     }
     
     
-    public boolean Iguales(Object a, Object b) {
+    public boolean Iguales(Operable a, Operable b) {
         return ((Numero)a).GetValor()==((Numero)b).GetValor();
     }  
+    
+    
+    public Operable Carga(){
+        System.out.println("Carga Entero: ");
+
+        return new Numero(Entrada.sc.nextInt());
+    }
+    
+    
+    public Operable Inicializa(){
+        return new Numero();
+    }
+
+    
     //METODOS RECURSIVOS DESTRUYEN LOS VALORES
     /*
     public static int MCD(Numero a, Numero b){

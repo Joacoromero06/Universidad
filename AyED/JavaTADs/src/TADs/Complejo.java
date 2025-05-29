@@ -1,9 +1,11 @@
 package TADs;
 
-import Recursos.IOperaciones;
+import Recursos.Entrada;
 
-public class Complejo implements IOperaciones{
-    protected double real,imaginaria;
+import Recursos.Operable;
+
+public class Complejo implements Operable{
+    double real,imaginaria;
 
     //CONSTRUCTORES SETTERS Y GETTERS
 
@@ -29,49 +31,61 @@ public class Complejo implements IOperaciones{
     }
 
     
-    //METODOS DE IOPERACIONES GENERALES PARA CUALQUIER OBJETO MATEMATICO
-    public void Sumar(Object a, Object b) {
+    //METODOS DE OPERABLE GENERALES PARA CUALQUIER OBJETO MATEMATICO
+    public void Sumar(Operable a, Operable b) {
         this.real=((Complejo)a).getReal()+((Complejo)b).getReal();
         this.imaginaria=((Complejo)a).getImaginaria()+((Complejo)b).getImaginaria();
     }
 
-   
-    public void Resta(Object a, Object b) {
+    
+    public void Resta(Operable a, Operable b) {
         this.real=((Complejo)a).getReal()-((Complejo)b).getReal();
         this.imaginaria=((Complejo)a).getImaginaria()-((Complejo)b).getImaginaria();
     }
 
     
-    public void Producto(Object a, Object b) {
+    public void Producto(Operable a, Operable b) {
         this.real=((Complejo)a).getReal()*((Complejo)b).getReal();
         this.imaginaria=((Complejo)a).getImaginaria()*((Complejo)b).getImaginaria();
     }
 
    
-    public void Potencia(Object a, int n) {
+    public void Potencia(Operable a, int n) {
         this.real=Math.pow(((Complejo)a).getReal(),n);
         this.imaginaria=Math.pow(((Complejo)a).getImaginaria(),n);
     }
 
     
-    public boolean Iguales(Object a, Object b) {
+    public boolean Iguales(Operable a, Operable b) {
         return ((Complejo)a).getReal()==((Complejo)b).getReal() &&((Complejo)a).getImaginaria()==((Complejo)b).getImaginaria();
     }
 
 
+    public Operable Carga(){
+        System.out.println("Carga Complejo");
+
+        System.out.println("Ingrese la parte real: ");
+        double real=Entrada.sc.nextDouble();
+        
+        System.out.println("Ingrese la parte real: ");
+        double imaginaria=Entrada.sc.nextDouble();
+
+        return new Complejo(real,imaginaria);
+    }
+    
+    
+    public Operable Inicializa(){
+        return new Complejo(); 
+    }
+    
+    
     //METODOS UNICOS DE LA CLASE COMPLEJO
     public String toString(){
         return "Numero Complejo: "+this.real+" "+this.imaginaria+"i ";
     }
 
-    
-    public void Conjugado(Complejo a){
-        this.real=a.getReal();
-        this.imaginaria=a.getImaginaria()*-1;
-    }
 
-
-    /*public void Division(Complejo a, Complejo b){
+    public void Division(Complejo a, Complejo b){
         Complejo aux=new Complejo();
         if(!Iguales(aux, b)){
             this.real=a.getReal()/b.getReal();
@@ -79,7 +93,13 @@ public class Complejo implements IOperaciones{
         }
         else
             System.err.println("Division por 0+0i no definida");
-    }*/
+    }
+
+    
+    public void Conjugado(Complejo a){
+        this.real=a.getReal();
+        this.imaginaria=a.getImaginaria()*-1;
+    }
 
 
     public static double Modulo(Complejo a){
