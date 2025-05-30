@@ -1,6 +1,6 @@
 package aplicaciones;
 
-import recursos.Entrada;
+import assets.Entrada;
 
 public class ColaInt extends ColaUtil{
     

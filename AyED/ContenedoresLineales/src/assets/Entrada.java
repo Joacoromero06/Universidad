@@ -1,4 +1,4 @@
-package recursos;
+package assets;
 
 import java.util.Scanner;
 

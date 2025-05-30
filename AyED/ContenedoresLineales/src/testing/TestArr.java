@@ -1,7 +1,6 @@
 package testing;
-import contenedores.*;
-
-import recursos.Entrada;
+import CL1.*;
+import assets.Entrada;
 
 public class TestArr {
 	public static void main(String[] args) {

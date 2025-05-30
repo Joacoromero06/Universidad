@@ -1,4 +1,4 @@
-package recursos;
+package TDA;
 //Objeto clase nodo usado par implementar SLinkedList
 public class Nodo {
 	private Object nodoInfo;//Es generica permite guardar cualquier cosa al ser de tipo object

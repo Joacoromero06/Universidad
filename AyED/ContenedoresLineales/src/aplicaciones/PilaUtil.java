@@ -1,11 +1,11 @@
 package aplicaciones;
 
-import contenedores.PilaArr;
-import contenedores.PilaSLinkedList;
-import recursos.ContLin1;
+import CL1.PilaArr;
+import CL1.PilaSLinkedList;
+import TDA.OperacionesCL1;
 
 public class PilaUtil {
-    protected ContLin1 pila;
+    protected OperacionesCL1 pila;
 
 
     public PilaUtil(){

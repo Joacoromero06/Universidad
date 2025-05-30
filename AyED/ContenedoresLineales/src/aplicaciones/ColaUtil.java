@@ -1,12 +1,12 @@
 package aplicaciones;
 
-import contenedores.ColaArr;
-import contenedores.ColaSLinkedList;
-import contenedores.PilaSLinkedList;
-import recursos.ContLin1;
+import CL1.ColaArr;
+import CL1.ColaSLinkedList;
+import CL1.PilaSLinkedList;
+import TDA.OperacionesCL1;
 
 public class ColaUtil {
-    protected ContLin1 cola;
+    protected OperacionesCL1 cola;
 
 
     public ColaUtil(){
@@ -19,7 +19,7 @@ public class ColaUtil {
     }    
 
 
-    public ContLin1 GetCola(){
+    public OperacionesCL1 GetCola(){
         return this.cola;
     }
 

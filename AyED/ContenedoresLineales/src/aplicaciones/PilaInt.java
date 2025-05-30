@@ -1,7 +1,7 @@
 package aplicaciones;
 
-import recursos.Entrada;
-import recursos.PropNum;
+import assets.Entrada;
+import assets.PropNum;
 
 public class PilaInt extends PilaUtil{
 

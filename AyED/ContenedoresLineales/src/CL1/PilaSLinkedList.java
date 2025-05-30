@@ -1,10 +1,9 @@
 //Clase del pakete contenedores, para que sea un proyecto bien diseñadp
-package contenedores;
-//Compila antes de la clase el pakete recursos
-import recursos.*;
+package CL1;
+import TDA.*;
 
 
-public class PilaSLinkedList implements ContLin1 {
+public class PilaSLinkedList implements OperacionesCL1 {
 	//Para manejar una pila con SlinkedList solo necesitamos un nodo que es la CABEZA que apartir de ella se enlaza todo
 	private Nodo pila;
 	

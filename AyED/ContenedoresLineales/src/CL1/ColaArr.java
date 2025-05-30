@@ -1,7 +1,7 @@
-package contenedores;
-import recursos.*;
+package CL1;
+import TDA.*;
 
-public class ColaArr implements ContLin1, OperacionesCL1Estaticos{
+public class ColaArr implements OperacionesCL1, OperacionesCL1Estaticos{
 	private Object[] cola;
 	private int finalC, frenteC;//Manjeo la cola con dos indices para colacircular
 	private int tamCola;

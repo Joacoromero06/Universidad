@@ -1,7 +1,7 @@
-package contenedores;
-import recursos.*;
+package CL1;
+import TDA.*;
 
-public class PilaArr implements ContLin1, OperacionesCL1Estaticos {
+public class PilaArr implements OperacionesCL1, OperacionesCL1Estaticos {
 	private Object[] pila;//Array de objetos llamado pila
 	private int cabeza;//Manejamos un indice cabeza para no hacer corrimiento
 	private int tamPila;//Necesitamos el tamaño del array para declararlo, no de elementos sino del array

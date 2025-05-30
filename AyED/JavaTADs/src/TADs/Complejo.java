@@ -84,8 +84,14 @@ public class Complejo implements Operable{
         return "Numero Complejo: "+this.real+" "+this.imaginaria+"i ";
     }
 
+    
+    public void Conjugado(Complejo a){
+        this.real=a.getReal();
+        this.imaginaria=a.getImaginaria()*-1;
+    }
 
-    public void Division(Complejo a, Complejo b){
+
+    /*public void Division(Complejo a, Complejo b){
         Complejo aux=new Complejo();
         if(!Iguales(aux, b)){
             this.real=a.getReal()/b.getReal();
@@ -93,13 +99,7 @@ public class Complejo implements Operable{
         }
         else
             System.err.println("Division por 0+0i no definida");
-    }
-
-    
-    public void Conjugado(Complejo a){
-        this.real=a.getReal();
-        this.imaginaria=a.getImaginaria()*-1;
-    }
+    }*/
 
 
     public static double Modulo(Complejo a){

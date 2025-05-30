@@ -1,4 +1,4 @@
-package recursos;
+package assets;
 
 public class PropNum {
     public static boolean esCapicua(int n){
