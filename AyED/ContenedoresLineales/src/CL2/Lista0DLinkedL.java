@@ -1,6 +1,7 @@
 package CL2;
 import TDA.*;
 
+//IMPLEMENTACION COMUN DE DE OPERACIONES COMUNES A LISTAS COMUNES Y ORDENADAS CON DLL
 public abstract class Lista0DLinkedL implements OperacionesCL2 {
 	protected NodoDoble frenteL, finalL;
 	protected int ultimo;

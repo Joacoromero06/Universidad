@@ -1,7 +1,7 @@
 package CL2;
 import TDA.*;
 
-// lista ordenada
+//IMPLEMENTACION DE LISTA ORDENADA DE OBJETOS CON DLL  
 public abstract class Lista2DLinkedL extends Lista0DLinkedL implements OperacionesCL4 {
 	
 	// insercion ordenada

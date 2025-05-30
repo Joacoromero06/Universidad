@@ -1,6 +1,7 @@
 package CL1;
 import TDA.*;
 
+//IMPLEMENTACION DE CL1->COLA DE OBJETOS CON ARRAY
 public class ColaArr implements OperacionesCL1, OperacionesCL1Estaticos{
 	private Object[] cola;
 	private int finalC, frenteC;//Manjeo la cola con dos indices para colacircular

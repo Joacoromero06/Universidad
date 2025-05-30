@@ -1,6 +1,6 @@
 package TDA;
 
-// es para lista ordenada
+//TDA LISTA ORDENADA DE OBJETOS
 
 public interface OperacionesCL4 {
 	public void insertar(Object elemento);

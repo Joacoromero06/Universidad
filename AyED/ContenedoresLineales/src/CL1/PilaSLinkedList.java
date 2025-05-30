@@ -2,7 +2,7 @@
 package CL1;
 import TDA.*;
 
-
+//IMPLEMENTACION CL1->PILA CON SLL
 public class PilaSLinkedList implements OperacionesCL1 {
 	//Para manejar una pila con SlinkedList solo necesitamos un nodo que es la CABEZA que apartir de ella se enlaza todo
 	private Nodo pila;

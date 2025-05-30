@@ -1,6 +1,6 @@
 package TDA;
 
-// es para terminar de especificar las operaciones de una lista comun
+//TDA LISTA COMUN DE OBJETOS
 
 public interface OperacionesCL3 {	
 	public void insertar(Object elemento, int posicion);

@@ -1,6 +1,7 @@
 package CL1;
 import TDA.*;
 
+//IMPLEMENTACION CL1->PILA CON ARRAY
 public class PilaArr implements OperacionesCL1, OperacionesCL1Estaticos {
 	private Object[] pila;//Array de objetos llamado pila
 	private int cabeza;//Manejamos un indice cabeza para no hacer corrimiento

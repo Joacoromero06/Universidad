@@ -1,8 +1,9 @@
 package CL2;
 import TDA.*;
 
-// implementando una lista simple
+// IMPLEMENTACION LISTA COMUN DE OBJETOS CON DLL
 public abstract class Lista1DLinkedL extends Lista0DLinkedL implements OperacionesCL3 {
+	
 	public void insertar(Object elemento, int posicion) {
 		NodoDoble nodo;
 		if (posicion > tamanio() || posicion < 0) {

@@ -1,7 +1,7 @@
 package CL1;
 import TDA.*;
 
-
+//IMPLEMENTACION DE CL1->COLA CON SLL
 public class ColaSLinkedList implements OperacionesCL1 {
 	private Nodo frenteC, finalC;//Necesito dos nodos para poder hacer referencia al nodo ultimo y al primero
 	//Guardan los nodos que estan al final y al principio
