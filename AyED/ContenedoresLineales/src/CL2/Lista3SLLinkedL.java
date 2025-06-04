@@ -29,6 +29,7 @@ public abstract class Lista3SLLinkedL implements OperacionesCL2{
         boolean flag;
         if(estaVacia()){
             FrenteL=new Nodo(elemento);
+            this.ultimo++;
         }else{
             if(esMenor(elemento,FrenteL.getNodoInfo()))
                 FrenteL=new Nodo(elemento,FrenteL);
@@ -36,14 +37,14 @@ public abstract class Lista3SLLinkedL implements OperacionesCL2{
                 flag=true;
                 temp=FrenteL;
                 while (temp.getNextNodo()!=null&&flag) {
-                    if(esMenor(elemento,temp.getNextNodo().getNodoInfo())){
+                    if(esMenor(elemento,temp.getNextNodo().getNodoInfo()))
                         flag=false;
-                    }    
-                    temp=temp.getNextNodo();
-                }
-                if(!flag)
-                    temp.setNextNodo(new Nodo(elemento,temp.getNextNodo()));
+                    else
+                        temp=temp.getNextNodo();
+                }//error cuando el mas grande de la lista es el mayor de la lsita final los siguientes no se ordenan atras
+                temp.setNextNodo(new Nodo(elemento,temp.getNextNodo()));
             }
+            this.ultimo++;
         }
     }
 
@@ -75,11 +76,11 @@ public abstract class Lista3SLLinkedL implements OperacionesCL2{
                     elem = FrenteL.getNodoInfo();
                 }else{
                     while (c<pos) {
-                        System.out.println("LLEGUE");
                         temp=temp.getNextNodo();
                         c++;
                     }
                     elem=temp.getNodoInfo();
+                    System.err.println("LLEGUE");
                 }
             }else{System.out.println("Error posicion no existente");}
         }else{System.out.println("Error lista vacia");}
