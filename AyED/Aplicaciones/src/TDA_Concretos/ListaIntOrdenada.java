@@ -16,7 +16,7 @@ public class ListaIntOrdenada extends Lista3SLLinkedL{
     public String toString() {
        String str="Vamos a mostrar la lista: \n[ ";
         for(int i=0;i<tamanio()-1;i++){
-            str+=(Integer)devolver(i);System.out.println("paso"+i);
+            str+=(Integer)devolver(i);
             str+=",";
         }str+=(Integer)devolver(tamanio()-1);str+=" ]\n";
         return str;
