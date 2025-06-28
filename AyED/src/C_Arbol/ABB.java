@@ -170,5 +170,14 @@ public abstract class ABB extends ArbolBinario{
 		}
 		
 	}
-	
+	public void meter(Object nodoInfo){
+		meterRec(this.root,nodoInfo);
+	}
+	public NodoArbolBinario meterRec(NodoArbolBinario nodo,Object nodoInfo){
+		if(nodo==null){
+			return new NodoArbolBinario(nodoInfo);
+		}
+		if(menor(nodoInfo,nodo.getNodoInfo()))
+			return nodo.getLeftChild().meterRec(nodo.getLeftChild(),nodoInfo);
+	}
 }

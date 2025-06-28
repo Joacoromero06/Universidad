@@ -5,5 +5,5 @@ public interface Conjunto {
     public boolean estaVacia();
     public boolean pertenece(Object elemento);
     public void meter(Object elemento);
-    public void sacar(Object elemento);
+    public void sacar(Object elemento); 
 }
